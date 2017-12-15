@@ -1,14 +1,7 @@
-#include <algorithm>
-#include <vector>
-#include <stdio.h>
-#include <cstring>
+#include "main.h"
+//#include "origin.h"
 
-#define MAX_LENGTH_ARRAY 1000000
-#define MAX_LENGTH_ELEMENT 100
-
-using namespace std;
-
-int main() {
+int current() {
     int t, n, m, a, s, i, j, k, o, flags_c, div_s, min, ts;
     vector<int> vi;
     bool is_done;
@@ -30,7 +23,7 @@ int main() {
         }
         
         if (m > MAX_LENGTH_ARRAY ||  m <= 0) {
-            return 1;
+            return EXIT_FAILURE;
         }
 
         if (!is_done) {
@@ -92,6 +85,13 @@ int main() {
     }
     delete [] sum;
     delete [] flags;
-    return 0;
+    return EXIT_SUCCESS;
+}
+
+int main() {
+    int exit_flag;
+    exit_flag = current();
+//    exit_flag = origin();
+    return exit_flag;
 }
 
